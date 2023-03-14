@@ -1,9 +1,14 @@
-import Loader from 'react-loader-spinner'
+// import Loader from 'react-loader-spinner'
+import {Link} from 'react-router-dom'
 import {Component} from 'react'
 import './index.css'
 import LatestMatch from '../LatestMatch'
 
 class TeamMatches extends Component {
+  state = {
+    teamBannerUrl: '',
+  }
+
   getMatchDetails = async () => {
     console.log(this.props)
     const {match} = this.props
@@ -11,8 +16,11 @@ class TeamMatches extends Component {
     const {id} = params
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const data = await response.json()
+    const {team_banner_url: teamBannerUrl} = data
 
-    console.log(data)
+    this.setState({
+      teamBannerUrl,
+    })
   }
 
   componentDidMount = () => {
@@ -20,13 +28,18 @@ class TeamMatches extends Component {
   }
 
   render() {
+    const {teamBannerUrl} = this.state
+    const {match} = this.props
+    const {id} = match
     return (
-      <div className="ipl-bg-container">
-        <div className="ipl-bg-inside-container">
-          <img src="banner-image" alt="banner" className="banner-image" />
-          <LatestMatch />
+      <Link to={`/ipl/${id}`}>
+        <div className="ipl-bg-container">
+          <div className="ipl-bg-inside-container">
+            <img src={teamBannerUrl} alt="banner" className="banner-image" />
+            <LatestMatch key={id} />
+          </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }

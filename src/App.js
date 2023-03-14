@@ -5,7 +5,7 @@ import TeamMatches from './components/TeamMatches'
 
 const App = () => (
   <>
-    <Route path="/" component={Home} />
+    <Route exact path="/" component={Home} />
     <Switch>
       <Route exact path="/ipl/:id" component={TeamMatches} />
     </Switch>
