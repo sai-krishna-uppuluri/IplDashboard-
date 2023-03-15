@@ -110,7 +110,7 @@ class TeamMatches extends Component {
           <div className="ipl-bg-inside-container">
             <img
               src={teamBannerUrl}
-              alt={latestMatchDetailsList.competingTeam}
+              alt="team banner"
               className="banner-image"
             />
             <LatestMatch

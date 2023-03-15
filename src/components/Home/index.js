@@ -39,14 +39,16 @@ class Home extends Component {
       <Link to="/home" className="link-component">
         <div className="home-bg-container">
           {isLoading ? (
-            <Loader type="Oval" color="#ffffff" height={50} />
+            <div testid="loader">
+              <Loader type="Oval" color="#ffffff" height={50} />
+            </div>
           ) : (
             <>
               <div className="home-logo-container">
                 <img
                   src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
                   className="logo"
-                  alt={teamData.name}
+                  alt="ipl logo"
                 />
                 <h1 className="home-main-heading"> IPL DashBoard</h1>
               </div>

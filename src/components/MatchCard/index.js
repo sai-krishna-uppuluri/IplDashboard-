@@ -17,7 +17,7 @@ const MatchCard = props => {
       <div className="card-inner-container">
         <img
           src={competingTeamLogo}
-          alt={competingTeam}
+          alt={`competing team ${competingTeam}`}
           className="competing-team-logo"
         />
         <p className="text text-size"> {competingTeam}</p>
