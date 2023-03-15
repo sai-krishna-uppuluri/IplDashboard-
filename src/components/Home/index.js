@@ -33,10 +33,10 @@ class Home extends Component {
 
   render() {
     const {teamData, isLoading} = this.state
-    console.log(teamData)
+    // console.log(teamData)
 
     return (
-      <Link to="/home">
+      <Link to="/home" className="link-component">
         <div className="home-bg-container">
           {isLoading ? (
             <Loader type="Oval" color="#ffffff" height={50} />
@@ -46,7 +46,7 @@ class Home extends Component {
                 <img
                   src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
                   className="logo"
-                  alt="logo"
+                  alt={teamData.name}
                 />
                 <h1 className="home-main-heading"> IPL DashBoard</h1>
               </div>

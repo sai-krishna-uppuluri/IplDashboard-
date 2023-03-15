@@ -30,6 +30,10 @@
 .team-card-container {
   width: 50%;
 }
+.link-component {
+  text-decoration: none;
+  color: #ffffff;
+}
 
 .team-cards {
   list-style-type: none;

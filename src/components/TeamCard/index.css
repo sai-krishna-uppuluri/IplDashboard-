@@ -6,6 +6,10 @@
   border: 1px solid #ffffff;
   margin: 15px;
 }
+.link-component {
+  text-decoration: none;
+  color: #ffffff;
+}
 
 .each-team-container {
   display: flex;
